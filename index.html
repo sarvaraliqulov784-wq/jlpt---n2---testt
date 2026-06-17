@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JLPT N2 模擬テスト</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BOSH SAHIFA -->
+  <div id="home-screen" class="screen active">
+    <div class="hero">
+      <div class="hero-badge">JLPT</div>
+      <h1>N2<span class="hero-sub">模擬テスト</span></h1>
+      <p class="hero-desc">直前対策・文字語彙文法</p>
+    </div>
+
+    <div class="mavzu-grid" id="mavzu-list">
+      <!-- Mavzular JS tomonidan yuklanadi -->
+    </div>
+
+    <div class="stats-bar" id="stats-bar">
+      <div class="stat">
+        <span class="stat-num" id="total-done">0</span>
+        <span class="stat-label">Bajarilgan</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="total-correct">0</span>
+        <span class="stat-label">To'g'ri</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="total-pct">0%</span>
+        <span class="stat-label">Natija</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEST SAHIFASI -->
+  <div id="test-screen" class="screen">
+    <div class="test-header">
+      <button class="back-btn" onclick="goHome()">← Orqaga</button>
+      <div class="test-title" id="test-title"></div>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        <span class="progress-text" id="progress-text"></span>
+      </div>
+    </div>
+
+    <div class="question-wrap">
+      <div class="mondai-label" id="mondai-label"></div>
+      <div class="question-text" id="question-text"></div>
+      <div class="options" id="options"></div>
+      <div class="feedback" id="feedback"></div>
+      <button class="next-btn" id="next-btn" onclick="nextQuestion()" style="display:none">次へ →</button>
+    </div>
+  </div>
+
+  <!-- NATIJA SAHIFASI -->
+  <div id="result-screen" class="screen">
+    <div class="result-wrap">
+      <div class="result-circle" id="result-circle">
+        <span id="result-pct">0%</span>
+      </div>
+      <h2 id="result-title"></h2>
+      <p id="result-msg"></p>
+      <div class="result-stats">
+        <div class="r-stat"><span id="r-correct">0</span><label>To'g'ri</label></div>
+        <div class="r-stat"><span id="r-wrong">0</span><label>Noto'g'ri</label></div>
+        <div class="r-stat"><span id="r-total">0</span><label>Jami</label></div>
+      </div>
+      <div class="result-btns">
+        <button onclick="retryTest()">🔄 Qayta urinish</button>
+        <button onclick="goHome()">🏠 Bosh sahifa</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
